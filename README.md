@@ -16,3 +16,9 @@ cd ios && pod install && cd ..
 ```
 npx-react-native run-ios
 ```
+
+
+Demo Video:
+
+https://user-images.githubusercontent.com/12051018/196438265-1a86f1e8-13ca-4a4a-8b0b-06506b6922bb.mp4
+
