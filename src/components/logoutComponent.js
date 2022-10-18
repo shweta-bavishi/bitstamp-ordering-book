@@ -6,9 +6,10 @@ import {NAVIGATION_TO_LOGIN_SCREEN} from '../navigation/routes';
 import {connect} from 'react-redux';
 import {logoutUser, clearData} from '../store/actions';
 
-const LogoutComponent = ({navigation, onLogout}) => {
+const LogoutComponent = ({navigation, onLogout, resetData}) => {
   const {theme} = useContext(ThemeContext);
   const onSignout = () => {
+    resetData();
     onLogout();
     navigation.navigate(NAVIGATION_TO_LOGIN_SCREEN);
   };
@@ -21,10 +22,8 @@ const LogoutComponent = ({navigation, onLogout}) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onLogout: () => {
-      dispatch(clearData);
-      dispatch(logoutUser);
-    },
+    onLogout: () => dispatch(logoutUser),
+    resetData: () => dispatch(clearData()),
   };
 };
 
