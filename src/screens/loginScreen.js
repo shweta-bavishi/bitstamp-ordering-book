@@ -32,7 +32,7 @@ const LoginScreen = ({onLogin, navigation}) => {
       <Text style={styles.header(theme)}>Welcome back!</Text>
       <InputContainer
         imageUrl={'../resources/emailicon.png'}
-        placeholder={'E-mail'}
+        placeholder={'User Name'}
         iconName={'email'}
         value={userName}
         onChange={onChangeUserName}

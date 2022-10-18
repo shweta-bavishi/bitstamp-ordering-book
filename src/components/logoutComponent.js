@@ -4,7 +4,7 @@ import {ThemeContext} from '../theme';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {NAVIGATION_TO_LOGIN_SCREEN} from '../navigation/routes';
 import {connect} from 'react-redux';
-import {logoutUser} from '../store/actions';
+import {logoutUser, clearData} from '../store/actions';
 
 const LogoutComponent = ({navigation, onLogout}) => {
   const {theme} = useContext(ThemeContext);
@@ -21,7 +21,10 @@ const LogoutComponent = ({navigation, onLogout}) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onLogout: () => dispatch(logoutUser),
+    onLogout: () => {
+      dispatch(clearData);
+      dispatch(logoutUser);
+    },
   };
 };
 

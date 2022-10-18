@@ -19,6 +19,12 @@ export default (state = initialState, action) => {
         ...state,
         data: serializeData(action.data, state.conversionType),
       };
+    case Action.CLEAR_DATA:
+      return {
+        ...state,
+        conversionType: CONVERSION_TYPE.BTC_USD,
+        data: [],
+      };
     default:
       return state;
   }

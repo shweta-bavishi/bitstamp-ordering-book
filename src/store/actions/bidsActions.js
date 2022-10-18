@@ -9,3 +9,7 @@ export const setBids = data => ({
   type: Action.SET_BIDS,
   data,
 });
+
+export const clearData = () => ({
+  type: Action.CLEAR_DATA,
+});

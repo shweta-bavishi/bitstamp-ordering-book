@@ -6,6 +6,7 @@ import {ThemeContext} from '../theme';
 
 export default Table = ({columns, data}) => {
   const {theme} = useContext(ThemeContext);
+  // The below line has been added becase the error was recieved from react-native-table-component. Can be removed once they fix it
   LogBox.ignoreAllLogs();
   return (
     <View style={styles.inputContainer}>
